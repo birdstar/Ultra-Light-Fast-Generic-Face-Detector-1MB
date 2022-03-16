@@ -4,6 +4,7 @@ project(Ultra-face-mnn)
 set(CMAKE_CXX_STANDARD 11)
 
 find_package(OpenCV REQUIRED)
+find_package(Iconv REQUIRED)
 include_directories(
         mnn/include
         src
