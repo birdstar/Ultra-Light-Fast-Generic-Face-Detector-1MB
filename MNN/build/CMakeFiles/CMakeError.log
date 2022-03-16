@@ -1,0 +1,33 @@
+Performing C SOURCE FILE Test Iconv_IS_BUILT_IN failed with the following output:
+Change Dir: /home/ubuntu/Ultra-Light-Fast-Generic-Face-Detector-1MB/MNN/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8e90f/fast && /usr/bin/make -f CMakeFiles/cmTC_8e90f.dir/build.make CMakeFiles/cmTC_8e90f.dir/build
+make[1]: Entering directory '/home/ubuntu/Ultra-Light-Fast-Generic-Face-Detector-1MB/MNN/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8e90f.dir/src.c.o
+/usr/bin/cc   -DIconv_IS_BUILT_IN   -o CMakeFiles/cmTC_8e90f.dir/src.c.o   -c /home/ubuntu/Ultra-Light-Fast-Generic-Face-Detector-1MB/MNN/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8e90f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e90f.dir/link.txt --verbose=1
+/usr/bin/cc  -DIconv_IS_BUILT_IN    CMakeFiles/cmTC_8e90f.dir/src.c.o  -o cmTC_8e90f 
+/usr/bin/ld: CMakeFiles/cmTC_8e90f.dir/src.c.o: in function `main':
+src.c:(.text+0x2c): undefined reference to `libiconv_open'
+/usr/bin/ld: src.c:(.text+0x58): undefined reference to `libiconv'
+/usr/bin/ld: src.c:(.text+0x60): undefined reference to `libiconv_close'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_8e90f.dir/build.make:87: cmTC_8e90f] Error 1
+make[1]: Leaving directory '/home/ubuntu/Ultra-Light-Fast-Generic-Face-Detector-1MB/MNN/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_8e90f/fast] Error 2
+
+
+Source file was:
+
+      #include <stddef.h>
+      #include <iconv.h>
+      int main() {
+        char *a, *b;
+        size_t i, j;
+        iconv_t ic;
+        ic = iconv_open("to", "from");
+        iconv(ic, &a, &i, &b, &j);
+        iconv_close(ic);
+      }
+      

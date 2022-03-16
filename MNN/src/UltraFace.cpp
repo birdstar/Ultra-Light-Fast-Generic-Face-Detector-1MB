@@ -111,7 +111,7 @@ int UltraFace::detect(cv::Mat &raw_image, std::vector<FaceInfo> &face_list) {
 
     auto end = chrono::steady_clock::now();
     chrono::duration<double> elapsed = end - start;
-    cout << "inference time:" << elapsed.count() << " s" << endl;
+    //cout << "inference time:" << elapsed.count() << " s" << endl;
 
     generateBBox(bbox_collection, tensor_scores, tensor_boxes);
     nms(bbox_collection, face_list);
