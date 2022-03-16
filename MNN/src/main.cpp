@@ -34,8 +34,8 @@ int main(int argc, char **argv) {
         auto end = chrono::steady_clock::now();
         chrono::duration<double> elapsed = end - start;
         cout << "all time: " << elapsed.count() << " s" << endl;
-        cv::imshow("UltraFace", frame);
-        cv::waitKey();
+//        cv::imshow("UltraFace", frame);
+//        cv::waitKey();
         string result_name = "result" + to_string(i) + ".jpg";
         cv::imwrite(result_name, frame);
     }
